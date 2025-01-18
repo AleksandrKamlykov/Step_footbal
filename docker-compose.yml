@@ -1,0 +1,6 @@
+﻿services:
+  step_footbal:
+    image: step_footbal
+    build:
+      context: .
+      dockerfile: Dockerfile
