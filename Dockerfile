@@ -18,4 +18,7 @@ RUN dotnet publish "Step_footbal.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN dotnet tool install --global dotnet-ef
+ENV PATH="$PATH:/root/.dotnet/tools"
+RUN dotnet ef database update
 ENTRYPOINT ["dotnet", "Step_footbal.dll"]
