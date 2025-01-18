@@ -8,10 +8,7 @@ namespace Step_footbal.Context
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Match> Matches { get; set; }
-        private readonly string _connectionString = "Server=DESKTOP-BJKPV9B;" +
-            "Database=Primera;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=true;";
+        private readonly string _connectionString = "Server=tcp:pyshop.database.windows.net,1433;Initial Catalog=py_Shop;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication=\"Active Directory Default\";";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
